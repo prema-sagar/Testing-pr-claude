@@ -1,0 +1,22 @@
+# ================================================================
+# FILE: sample-app/.github/workflows/pr-checks.yml
+#
+# ⚠️  BEFORE SAVING: Replace YOUR-USERNAME on line 15
+#     with your actual GitHub username.
+#     Example:  uses: prema123/devops-workflows/...
+# ================================================================
+
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ai-review:
+    uses: YOUR-USERNAME/devops-workflows/.github/workflows/claude-review.yml@main   # ⚠️ CHANGE THIS LINE
+    with:
+      fail_on_critical: true
+      model_provider:   'bedrock'
+      max_diff_lines:   2000
+    secrets: inherit
