@@ -1,9 +1,6 @@
 # ================================================================
 # FILE: sample-app/.github/workflows/pr-checks.yml
-#
-# ⚠️  BEFORE SAVING: Replace YOUR-USERNAME on line 15
-#     with your actual GitHub username.
-#     Example:  uses: prema123/devops-workflows/...
+#     
 # ================================================================
 
 name: PR Checks
@@ -14,7 +11,7 @@ on:
 
 jobs:
   ai-review:
-    uses: YOUR-USERNAME/devops-workflows/.github/workflows/claude-review.yml@main   # ⚠️ CHANGE THIS LINE
+    uses: prema-sagar/devops-workflows/.github/workflows/claude-review.yml@main   # ⚠️ CHANGE THIS LINE
     with:
       fail_on_critical: true
       model_provider:   'bedrock'
