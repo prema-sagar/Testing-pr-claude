@@ -1,19 +1,18 @@
-# ================================================================
-# FILE: sample-app/.github/workflows/pr-checks.yml
-#     
-# ================================================================
-
 name: PR Checks
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   ai-review:
-    uses: prema-sagar/devops-workflows/.github/workflows/claude-review.yml@main   # ⚠️ CHANGE THIS LINE
+    uses: prema-sagar/devops-workflows/.github/workflows/claude-review.yml@main
     with:
       fail_on_critical: true
-      model_provider:   'bedrock'
-      max_diff_lines:   2000
+      model_provider: 'bedrock'
+      max_diff_lines: 2000
     secrets: inherit
